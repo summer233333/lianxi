@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="demo">
+    <span>我是文本节点</span>
+  </div>
+
+  <script>
+    /* 
+      innerHTML：获取设置元素节点的子节点，会渲染标签。
+
+      innerText：获取设置元素节点的文本节点，不会渲染标签，而是把标签当作文本输出。
+
+      outerHTML：直接替换掉当前元素节点。
+     */
+
+    //获取body
+    var body = document.getElementsByTagName('body')[0];
+    console.log(body);
+
+    var demo = document.getElementsByClassName('demo')[0];
+    //获取内容
+    console.log(demo.innerHTML);
+    // console.log(demo.innerText);
+    
+    //设置内容
+    // demo.innerText = '<p>我是js动态设置的</p>';
+    // demo.innerHTML = '<p>我是js动态设置的</p>';
+    demo.outerHTML = '<p>我是js动态设置的</p>';
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //替换掉所有的空格
+    var pat1 = /\s/g;
+    var str1 = ' hello world  !';
+    console.log(str1.replace(pat1,''));
+
+    //删除首尾空格
+    var pat2 = /^\s*|\s*$/g;
+    var str1 = ' hello world !  ';
+    console.log(str1.replace(pat2,''));
+
+    //消除数组中重复的数字，例如：arr ＝ [a,c,d,e,e,a,b,a,e,d,c]；
+    var arr = ['a','c','d','e','e','a','b','a','e','d','c'];
+    var arr2 = [];//用来存储非重复的元素
+    for(var i = 0; i < arr.length; i++) {
+      if(arr2.indexOf(arr[i]) == -1) {
+        arr2.push(arr[i]);
+      }
+    }
+    console.log(arr2);
+
+    //利用prompt() 获取用户输入的字符，并将其反转。
+    var va = prompt('请输入文本');
+    console.log(va);
+    console.log(va.split('').reverse().join(''));
+  </script>
+</body>
+</html>

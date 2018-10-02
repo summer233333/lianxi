@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" id="btn">点名</button>
+  <div id="show">...</div>
+  <script>
+    /* 
+      抽中的人名应该去除
+     */
+    var arr = [
+      '朱永', '李豪', '吴娟', '卓冰', '梁春晓', '郭俊宏', '李静', '付秀秀', '王维', '陈磊', '林令邦',
+      '屈继华', '冯宇', '吴宇', '陈松', '方帝迪', '黄薇',
+      '张娜', '姜煜超', '符凤莉', '邓诚杰', '唐铭', '何灵', '罗琴', '黄先鹏', '陈兴', '王玺'
+    ];
+
+    var btn = document.getElementById('btn'),
+      show = document.getElementById('show');
+
+    btn.onclick = function() {
+      if(arr.length == 0) {
+        alert('全部点完');
+        return;
+      }
+      var num = getRandom(arr.length);
+      show.innerHTML = arr[num];
+
+      //选中的从数组中删除
+      arr.splice(num,1);
+      console.log(arr);
+    }
+
+    /* 
+      获取随机数
+      @method：getRandom
+      @param {number}
+      @return {number}
+     */
+    function getRandom(len) {
+      return Math.floor(Math.random() * len);
+    }
+  </script>
+</body>
+</html>

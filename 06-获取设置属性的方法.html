@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <a id="link" class="link" href="http://www.baidu.com" title="链接">百度</a>
+  <script>
+    /* 
+      1、获取属性的方法
+        元素.属性名
+          >> 注意class要写成className，float要写成cssFloat
+        
+        元素.getAttribute(属性名)
+
+        元素.attributes
+          获取所有属性
+
+      2、设置属性的方法
+        元素.属性名=属性值
+
+        元素.setAttribute(属性名,属性值)
+
+      3、移除属性
+        元素.removeAttribute(属性名)
+
+      4、class设置
+        元素.classList  只读，返回所有的class
+        元素.classList.add(class名字) 添加class
+        元素.classList.remove() 移除class
+     */
+
+    var link = document.getElementById('link');
+    console.log(link.attributes);
+    // link.name = 'link';
+    link.setAttribute('name','link');
+    link.removeAttribute('title');
+    
+    //设置多个class方法一
+    //第一步判断是否有 .link
+    /* if(link.className.indexOf('link') == -1 ) {
+      link.className += ' ' + 'link';
+    } */
+
+    //设置多个class方法二
+    console.log(link.classList);
+    link.classList.add('one','two');
+  </script>
+</body>
+</html>

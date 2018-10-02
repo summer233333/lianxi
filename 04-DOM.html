@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li id="demo">2</li>
+    <li>3</li>
+  </ul>
+  <script>
+    /* 
+      1、认识DOM（document object module）？
+        中文名为文档对象模型，w3c标准，允许脚本操作文档结构、
+        内容和样式。
+
+      2、文档树（树结构）
+        元素节点：指标签
+        属性节点：指标签内部的属性
+        文本节点：指标签之间的文本
+
+      3、节点的属性（了解）
+        nodeName：节点名字（掌握）
+          >> 元素节点：返回标签名字
+          >> 属性节点：返回属性名字
+          >> 文本节点：统一返回 #text
+        
+        nodeValue：节点的值
+          >> 元素节点：返回 null 或者 undefined
+          >> 属性节点：返回属性值
+          >> 文本节点：返回文本
+        
+        nodeType：节点类型
+          >> 元素节点返回固定值 1
+          >> 属性节点返回固定值 2
+          >> 文本节点返回固定值 3
+
+      4、获取节点辅助方法
+        childNodes：返回所有的子节点，是一个类似数组的集合。
+          包含空白符（空格 回车...）
+
+        firstChild：返回第一个子节点，可能是空白符
+
+        lastChild：返回最后一个子节点，可能是空白符
+
+        previousSibling：上一个兄弟元素，可能是空白符
+
+        nextSibling：下一个兄弟元素，可能是空白符
+
+        parentNode：获取父节点
+
+        children：返回所有子节点，不包含空白符
+     */
+     var body = document.body; //快速获取body标签
+    //  console.log(body.nodeName);
+    // console.log(body.nodeValue);
+    // console.log(body.childNodes[1]);
+    // console.log(body.children);
+    // console.log(body.firstChild);
+
+    var demo = document.getElementById('demo');
+    console.log(demo.parentNode);
+  </script>
+</body>
+</html>

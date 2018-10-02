@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>模态框</title>
+</head>
+<body>
+  <button type="button" id="login">登录</button>
+
+  <script>
+    //创建元素
+    function createElement(dom) {
+      var mo = document.createElement('div');
+      mo.style.height = '600px';
+      mo.style.width = '300px';
+      mo.style.background = '#666';
+      mo.style.position = 'absolute';
+      mo.style.top = '0';
+      mo.style.left = '0';
+      mo.style.right = '0';
+      mo.style.bottom = '0';
+      mo.style.margin = 'auto';
+      mo.style.zIndex = 999;
+      dom.appendChild(mo);
+
+      var shadow = document.createElement('div');
+      shadow.style.position = 'absolute';
+      shadow.style.top = '0';
+      shadow.style.left = '0';
+      shadow.style.zIndex = 998;
+      shadow.style.background = '#eee';
+      var w = document.documentElement.clientWidth || document.body.clientWidth;
+      shadow.style.width = w + 'px';
+
+      //获取html高度：document.documentElement.clientHeight
+      //获取body高度：document.body.clientHeight
+      var h = document.documentElement.clientHeight || document.body.clientHeight;
+
+      shadow.style.height = h + 'px';
+
+      dom.appendChild(shadow);
+    }
+    document.getElementById('login').onclick = function() {
+      createElement(document.body);
+    }
+  </script>
+</body>
+</html>
