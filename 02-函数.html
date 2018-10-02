@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /* 
+      1、什么是函数？
+        就是指将一段代码封装在一起，在需要用到该代码的时候，
+        直接调用该函数。而且可以任意调用多次。
+
+      2、函数有什么作用？
+        提高代码利用率，减少重复的代码；
+        按功能区别，实现功能模块化；
+
+      3、函数的声明：
+        function 函数名字(参数1,参数n) {
+          函数体(需要执行的代码块)
+        }
+
+      4、调用函数
+        函数名字(参数1,参数n);
+
+          如果声明函数的时候定义了参数，调用的时候就需要带上参数
+
+      5、按照参数的形式对函数进行分类：
+        无参函数：就是没有参数的函数；
+        有参函数：有参数的函数
+
+      6、形参和实参：
+        形参：声明函数的时候，定义的参数
+        实参：调用函数的时候，给形参传递的值
+
+      7、返回值函数
+        使用关键字 return ，使函数返回一个值。
+        return 后面写的什么结果，最后调用函数的时候就返回什么结果。
+        
+        return 下一行代码不再执行。
+     */
+      //声明:最简单的函数
+      function sayHi() {
+        console.log('Hi,function');
+      }
+
+      //调用函数
+      sayHi();
+
+      //声明：有参函数
+      function alertNum(num) {
+        alert(num);
+        alert(num + 3);
+      }
+      //调用函数的时候，给形参传值
+      // alertNum(3);
+
+      //输出任意两个数的和
+      //比如 3+4，7+8，10+11
+      /* 
+        很low的写法
+        console.log(3+4);
+        console.log(7+8);
+        console.log(10+11); 
+      */
+      function sum(a,b) {
+        console.log(a * b);
+      }
+      sum(3,4);
+      sum(7,8);
+      sum(11,10);
+
+      //返回值函数
+      function sum(a,b) {
+        return a * b;
+      }
+      //sum(3,4); //相当于 sum(3,4) = 12
+      // console.log(sum(3,4));
+      var c = sum(7,8);
+      console.log(c);
+
+      //最简单的返回值函数
+      function s() {
+        return '我是一个返回值函数';
+        console.log(1); //不再执行
+      }
+      var str = s();
+      console.log(str);
+
+      //函数需要返回多个值
+      //可以以数组或者对象的形式返回
+      function s() {
+        return ['我是一个返回值函数',1,2,4];
+      }
+      console.log('函数返回多个值：',s());
+
+      function ss(a) {
+        console.log(a);
+        //a = 1;
+        return a + 1;
+      }
+      console.log(ss());
+
+      //为了避免调用函数的没有传递参数，导致的结果不一样
+      function ss(a) {
+        if(a == undefined) {
+          a = 1;
+        }
+        return a + 1;
+      }
+      console.log('函数默认值：',ss(5));
+
+      function lo(x) {
+        //..
+      }
+      lo(1);
+      //函数的参数只能在函数内部使用
+      console.log('是否会输出x',x);
+      
+    </script>
+</body>
+</html>
